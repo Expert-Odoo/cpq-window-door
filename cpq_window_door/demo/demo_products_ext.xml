@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     PRODUIT 2 — Porte-fenêtre 2 vantaux
+════════════════════════════════════════════════════════════════════════ -->
+  <record id="product_tmpl_porte_fen" model="product.template">
+    <field name="name">Porte-fenêtre 2 vantaux</field>
+    <field name="type">consu</field>
+    <field name="sale_ok">True</field>
+    <field name="purchase_ok">False</field>
+    <field name="description_sale">Porte-fenêtre aluminium configurable — calcul au m².</field>
+  </record>
+  <record id="cpq_product_porte_fen" model="cpq.product">
+    <field name="name">Porte-fenêtre 2 vantaux</field>
+    <field name="product_tmpl_id" ref="product_tmpl_porte_fen"/>
+  </record>
+
+  <!-- Attributs P2 -->
+  <record id="pf_attr_largeur" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_porte_fen"/>
+    <field name="name">Largeur</field><field name="attribute_type">numeric</field>
+    <field name="sequence">10</field>
+    <field name="numeric_min">120</field><field name="numeric_max">400</field>
+    <field name="numeric_default">240</field><field name="numeric_unit">cm</field>
+  </record>
+  <record id="pf_attr_hauteur" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_porte_fen"/>
+    <field name="name">Hauteur</field><field name="attribute_type">numeric</field>
+    <field name="sequence">20</field>
+    <field name="numeric_min">180</field><field name="numeric_max">280</field>
+    <field name="numeric_default">215</field><field name="numeric_unit">cm</field>
+  </record>
+  <record id="pf_attr_materiau" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_porte_fen"/>
+    <field name="name">Matériau</field><field name="attribute_type">list</field>
+    <field name="sequence">30</field>
+  </record>
+  <record id="pf_val_alu" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_materiau"/><field name="name">Aluminium</field><field name="price_per_m2">320</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="pf_val_pvc" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_materiau"/><field name="name">PVC</field><field name="price_per_m2">180</field><field name="sequence">20</field></record>
+  <record id="pf_val_bois" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_materiau"/><field name="name">Bois</field><field name="price_per_m2">260</field><field name="sequence">30</field></record>
+
+  <record id="pf_attr_ouverture" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_porte_fen"/>
+    <field name="name">Ouverture</field><field name="attribute_type">list</field><field name="sequence">40</field>
+  </record>
+  <record id="pf_val_ouv1" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_ouverture"/><field name="name">2 vantaux oscillo-battants</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="pf_val_ouv2" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_ouverture"/><field name="name">2 vantaux à la française</field><field name="sequence">20</field></record>
+  <record id="pf_val_ouv3" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_ouverture"/><field name="name">Coulissant 2 rails</field><field name="sequence">30</field></record>
+
+  <record id="pf_attr_vitrage" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_porte_fen"/>
+    <field name="name">Vitrage</field><field name="attribute_type">list</field><field name="sequence">50</field>
+  </record>
+  <record id="pf_val_vit1" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_vitrage"/><field name="name">Double Argon</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="pf_val_vit2" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_vitrage"/><field name="name">Double 4-16-4</field><field name="sequence">20</field></record>
+  <record id="pf_val_vit3" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_vitrage"/><field name="name">Triple</field><field name="surcharge">200</field><field name="sequence">30</field></record>
+  <record id="pf_val_vit4" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_vitrage"/><field name="name">Feuilleté sécurité</field><field name="surcharge">180</field><field name="sequence">40</field></record>
+
+  <record id="pf_attr_couleur" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_porte_fen"/>
+    <field name="name">Couleur extérieure</field><field name="attribute_type">list</field><field name="sequence">60</field>
+  </record>
+  <record id="pf_val_col1" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_couleur"/><field name="name">Blanc</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="pf_val_col2" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_couleur"/><field name="name">Anthracite RAL 7016</field><field name="surcharge">60</field><field name="sequence">20</field></record>
+  <record id="pf_val_col3" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_couleur"/><field name="name">RAL standard</field><field name="surcharge">60</field><field name="sequence">30</field></record>
+  <record id="pf_val_col4" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_couleur"/><field name="name">RAL spécial</field><field name="surcharge">140</field><field name="sequence">40</field></record>
+
+  <record id="pf_attr_seuil" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_porte_fen"/>
+    <field name="name">Seuil</field><field name="attribute_type">list</field><field name="sequence">70</field>
+  </record>
+  <record id="pf_val_seu1" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_seuil"/><field name="name">Standard</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="pf_val_seu2" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_seuil"/><field name="name">PMR (plat)</field><field name="surcharge">45</field><field name="sequence">20</field></record>
+  <record id="pf_val_seu3" model="cpq.attribute.value"><field name="attribute_id" ref="pf_attr_seuil"/><field name="name">Surélevé anti-inondation</field><field name="surcharge">120</field><field name="sequence">30</field></record>
+
+  <record id="pf_attr_volet" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_porte_fen"/>
+    <field name="name">Volet roulant intégré</field><field name="attribute_type">boolean</field>
+    <field name="sequence">80</field><field name="bool_surcharge">380</field>
+  </record>
+  <record id="pf_attr_pose" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_porte_fen"/>
+    <field name="name">Pose incluse</field><field name="attribute_type">boolean</field>
+    <field name="sequence">90</field><field name="bool_surcharge">220</field>
+  </record>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     PRODUIT 3 — Baie vitrée coulissante
+════════════════════════════════════════════════════════════════════════ -->
+  <record id="product_tmpl_baie" model="product.template">
+    <field name="name">Baie vitrée coulissante</field>
+    <field name="type">consu</field><field name="sale_ok">True</field><field name="purchase_ok">False</field>
+    <field name="description_sale">Baie coulissante aluminium configurable — calcul au m².</field>
+  </record>
+  <record id="cpq_product_baie" model="cpq.product">
+    <field name="name">Baie vitrée coulissante</field>
+    <field name="product_tmpl_id" ref="product_tmpl_baie"/>
+  </record>
+  <record id="bv_attr_largeur" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_baie"/><field name="name">Largeur</field><field name="attribute_type">numeric</field><field name="sequence">10</field><field name="numeric_min">180</field><field name="numeric_max">600</field><field name="numeric_default">300</field><field name="numeric_unit">cm</field></record>
+  <record id="bv_attr_hauteur" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_baie"/><field name="name">Hauteur</field><field name="attribute_type">numeric</field><field name="sequence">20</field><field name="numeric_min">200</field><field name="numeric_max">260</field><field name="numeric_default">220</field><field name="numeric_unit">cm</field></record>
+
+  <record id="bv_attr_rails" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_baie"/><field name="name">Nombre de rails</field><field name="attribute_type">list</field><field name="sequence">30</field></record>
+  <record id="bv_val_r1" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_rails"/><field name="name">2 rails</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="bv_val_r2" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_rails"/><field name="name">3 rails</field><field name="surcharge">180</field><field name="sequence">20</field></record>
+  <record id="bv_val_r3" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_rails"/><field name="name">4 rails</field><field name="surcharge">350</field><field name="sequence">30</field></record>
+
+  <record id="bv_attr_mat" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_baie"/><field name="name">Matériau</field><field name="attribute_type">list</field><field name="sequence">40</field></record>
+  <record id="bv_val_mat1" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_mat"/><field name="name">Aluminium</field><field name="price_per_m2">380</field><field name="is_default">True</field><field name="sequence">10</field></record>
+
+  <record id="bv_attr_vit" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_baie"/><field name="name">Vitrage</field><field name="attribute_type">list</field><field name="sequence">50</field></record>
+  <record id="bv_val_v1" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_vit"/><field name="name">Double Argon</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="bv_val_v2" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_vit"/><field name="name">Double 4-16-4</field><field name="sequence">20</field></record>
+  <record id="bv_val_v3" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_vit"/><field name="name">Feuilleté sécurité</field><field name="surcharge">240</field><field name="sequence">30</field></record>
+
+  <record id="bv_attr_col" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_baie"/><field name="name">Couleur extérieure</field><field name="attribute_type">list</field><field name="sequence">60</field></record>
+  <record id="bv_val_c1" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_col"/><field name="name">Blanc</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="bv_val_c2" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_col"/><field name="name">Anthracite RAL 7016</field><field name="surcharge">80</field><field name="sequence">20</field></record>
+  <record id="bv_val_c3" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_col"/><field name="name">Sable RAL 1019</field><field name="surcharge">80</field><field name="sequence">30</field></record>
+  <record id="bv_val_c4" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_col"/><field name="name">RAL standard</field><field name="surcharge">80</field><field name="sequence">40</field></record>
+  <record id="bv_val_c5" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_col"/><field name="name">RAL spécial</field><field name="surcharge">180</field><field name="sequence">50</field></record>
+
+  <record id="bv_attr_galandage" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_baie"/><field name="name">Galandage</field><field name="attribute_type">boolean</field><field name="sequence">70</field><field name="bool_surcharge">290</field></record>
+
+  <record id="bv_attr_motorisation" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_baie"/><field name="name">Motorisation</field><field name="attribute_type">list</field><field name="sequence">80</field></record>
+  <record id="bv_val_m1" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_motorisation"/><field name="name">Sans</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="bv_val_m2" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_motorisation"/><field name="name">Motorisée standard</field><field name="surcharge">320</field><field name="sequence">20</field></record>
+  <record id="bv_val_m3" model="cpq.attribute.value"><field name="attribute_id" ref="bv_attr_motorisation"/><field name="name">Motorisée domotique</field><field name="surcharge">580</field><field name="sequence">30</field></record>
+
+  <record id="bv_attr_pose" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_baie"/><field name="name">Pose incluse</field><field name="attribute_type">boolean</field><field name="sequence">90</field><field name="bool_surcharge">320</field></record>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     PRODUIT 4 — Porte d'entrée
+════════════════════════════════════════════════════════════════════════ -->
+  <record id="product_tmpl_porte_ent" model="product.template">
+    <field name="name">Porte d'entrée</field>
+    <field name="type">consu</field><field name="sale_ok">True</field><field name="purchase_ok">False</field>
+    <field name="description_sale">Porte d'entrée aluminium configurable — calcul au m².</field>
+  </record>
+  <record id="cpq_product_porte_ent" model="cpq.product">
+    <field name="name">Porte d'entrée</field>
+    <field name="product_tmpl_id" ref="product_tmpl_porte_ent"/>
+  </record>
+  <record id="pe_attr_larg" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Largeur</field><field name="attribute_type">numeric</field><field name="sequence">10</field><field name="numeric_min">80</field><field name="numeric_max">130</field><field name="numeric_default">100</field><field name="numeric_unit">cm</field></record>
+  <record id="pe_attr_haut" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Hauteur</field><field name="attribute_type">numeric</field><field name="sequence">20</field><field name="numeric_min">200</field><field name="numeric_max">240</field><field name="numeric_default">215</field><field name="numeric_unit">cm</field></record>
+
+  <record id="pe_attr_mat" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Matériau</field><field name="attribute_type">list</field><field name="sequence">30</field></record>
+  <record id="pe_val_mat1" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_mat"/><field name="name">Aluminium</field><field name="price_per_m2">420</field><field name="is_default">True</field><field name="sequence">10</field></record>
+
+  <record id="pe_attr_modele" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Modèle</field><field name="attribute_type">list</field><field name="sequence">40</field></record>
+  <record id="pe_val_mod1" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_modele"/><field name="name">Classique</field><field name="sequence">10</field></record>
+  <record id="pe_val_mod2" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_modele"/><field name="name">Contemporain</field><field name="surcharge">150</field><field name="is_default">True</field><field name="sequence">20</field></record>
+  <record id="pe_val_mod3" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_modele"/><field name="name">Design</field><field name="surcharge">350</field><field name="sequence">30</field></record>
+  <record id="pe_val_mod4" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_modele"/><field name="name">Plein (sans vitrage)</field><field name="sequence">40</field></record>
+
+  <record id="pe_attr_col_ext" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Couleur extérieure</field><field name="attribute_type">list</field><field name="sequence">50</field></record>
+  <record id="pe_val_ce1" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_col_ext"/><field name="name">Blanc</field><field name="sequence">10</field></record>
+  <record id="pe_val_ce2" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_col_ext"/><field name="name">Anthracite RAL 7016</field><field name="surcharge">80</field><field name="is_default">True</field><field name="sequence">20</field></record>
+  <record id="pe_val_ce3" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_col_ext"/><field name="name">Gris Quartz RAL 7039</field><field name="surcharge">80</field><field name="sequence">30</field></record>
+  <record id="pe_val_ce4" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_col_ext"/><field name="name">Noir RAL 9005</field><field name="surcharge">80</field><field name="sequence">40</field></record>
+  <record id="pe_val_ce5" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_col_ext"/><field name="name">RAL standard</field><field name="surcharge">100</field><field name="sequence">50</field></record>
+  <record id="pe_val_ce6" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_col_ext"/><field name="name">RAL spécial</field><field name="surcharge">200</field><field name="sequence">60</field></record>
+
+  <record id="pe_attr_col_int" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Couleur intérieure</field><field name="attribute_type">list</field><field name="sequence">60</field></record>
+  <record id="pe_val_ci1" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_col_int"/><field name="name">Blanc</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="pe_val_ci2" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_col_int"/><field name="name">Identique extérieur</field><field name="sequence">20</field></record>
+
+  <record id="pe_attr_vit_porte" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Vitrage porte</field><field name="attribute_type">list</field><field name="sequence">70</field></record>
+  <record id="pe_val_vp1" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_vit_porte"/><field name="name">Sans</field><field name="sequence">10</field></record>
+  <record id="pe_val_vp2" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_vit_porte"/><field name="name">Simple intégré</field><field name="sequence">20</field></record>
+  <record id="pe_val_vp3" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_vit_porte"/><field name="name">Double Argon intégré</field><field name="surcharge">80</field><field name="is_default">True</field><field name="sequence">30</field></record>
+  <record id="pe_val_vp4" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_vit_porte"/><field name="name">Dépoli</field><field name="surcharge">120</field><field name="sequence">40</field></record>
+
+  <record id="pe_attr_vit_lat" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Vitrage latéral</field><field name="attribute_type">list</field><field name="sequence">80</field></record>
+  <record id="pe_val_vl1" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_vit_lat"/><field name="name">Sans</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="pe_val_vl2" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_vit_lat"/><field name="name">1 latéral fixe</field><field name="surcharge">280</field><field name="sequence">20</field></record>
+  <record id="pe_val_vl3" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_vit_lat"/><field name="name">2 latéraux fixes</field><field name="surcharge">520</field><field name="sequence">30</field></record>
+
+  <record id="pe_attr_poignee" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Poignée</field><field name="attribute_type">list</field><field name="sequence">90</field></record>
+  <record id="pe_val_poi1" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_poignee"/><field name="name">Standard</field><field name="sequence">10</field></record>
+  <record id="pe_val_poi2" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_poignee"/><field name="name">Inox longue</field><field name="surcharge">75</field><field name="is_default">True</field><field name="sequence">20</field></record>
+  <record id="pe_val_poi3" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_poignee"/><field name="name">Design carrée</field><field name="surcharge">95</field><field name="sequence">30</field></record>
+  <record id="pe_val_poi4" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_poignee"/><field name="name">Noire mate</field><field name="surcharge">85</field><field name="sequence">40</field></record>
+
+  <record id="pe_attr_serrure" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Serrure</field><field name="attribute_type">list</field><field name="sequence">100</field></record>
+  <record id="pe_val_ser1" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_serrure"/><field name="name">3 points standard</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="pe_val_ser2" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_serrure"/><field name="name">5 points haute sécurité</field><field name="surcharge">180</field><field name="sequence">20</field></record>
+  <record id="pe_val_ser3" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_serrure"/><field name="name">Connectée (code + badge)</field><field name="surcharge">420</field><field name="sequence">30</field></record>
+
+  <record id="pe_attr_seuil" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Seuil</field><field name="attribute_type">list</field><field name="sequence">110</field></record>
+  <record id="pe_val_s1" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_seuil"/><field name="name">Standard</field><field name="is_default">True</field><field name="sequence">10</field></record>
+  <record id="pe_val_s2" model="cpq.attribute.value"><field name="attribute_id" ref="pe_attr_seuil"/><field name="name">PMR plat</field><field name="surcharge">50</field><field name="sequence">20</field></record>
+
+  <record id="pe_attr_pose" model="cpq.attribute"><field name="cpq_product_id" ref="cpq_product_porte_ent"/><field name="name">Pose incluse</field><field name="attribute_type">boolean</field><field name="sequence">120</field><field name="bool_surcharge">280</field></record>
+  <!-- ══ Liaisons de tarification (apres creation des attributs) ═══════════ -->
+  <record id="cpq_product_porte_fen" model="cpq.product">
+    <field name="price_mode">per_m2</field>
+    <field name="width_attribute_id" ref="pf_attr_largeur"/>
+    <field name="height_attribute_id" ref="pf_attr_hauteur"/>
+    <field name="material_attribute_id" ref="pf_attr_materiau"/>
+  </record>
+
+  <record id="cpq_product_baie" model="cpq.product">
+    <field name="price_mode">per_m2</field>
+    <field name="width_attribute_id" ref="bv_attr_largeur"/>
+    <field name="height_attribute_id" ref="bv_attr_hauteur"/>
+    <field name="material_attribute_id" ref="bv_attr_mat"/>
+  </record>
+
+  <record id="cpq_product_porte_ent" model="cpq.product">
+    <field name="price_mode">per_m2</field>
+    <field name="width_attribute_id" ref="pe_attr_larg"/>
+    <field name="height_attribute_id" ref="pe_attr_haut"/>
+    <field name="material_attribute_id" ref="pe_attr_mat"/>
+  </record>
+
+</odoo>

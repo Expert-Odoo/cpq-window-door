@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- ══ List cpq.attribute.value ═════════════════════════════════════════ -->
+  <record id="view_cpq_attribute_value_list" model="ir.ui.view">
+    <field name="name">cpq.attribute.value.list</field>
+    <field name="model">cpq.attribute.value</field>
+    <field name="arch" type="xml">
+      <list editable="bottom" string="Values">
+        <field name="sequence" widget="handle"/>
+        <field name="name"/>
+        <field name="surcharge" string="Surcharge"/>
+        <field name="price_per_m2" string="Rate per m² (if material)"/>
+        <field name="is_default"/>
+      </list>
+    </field>
+  </record>
+
+  <!-- ══ Form cpq.attribute ════════════════════════════════════════════════ -->
+  <record id="view_cpq_attribute_form" model="ir.ui.view">
+    <field name="name">cpq.attribute.form</field>
+    <field name="model">cpq.attribute</field>
+    <field name="arch" type="xml">
+      <form string="CPQ Attribute">
+        <sheet>
+          <group>
+            <group>
+              <field name="name"/>
+              <field name="attribute_type"/>
+              <field name="sequence"/>
+              <field name="is_required"/>
+            </group>
+            <group>
+              <field name="numeric_min"     invisible="attribute_type != 'numeric'"/>
+              <field name="numeric_max"     invisible="attribute_type != 'numeric'"/>
+              <field name="numeric_unit"    invisible="attribute_type != 'numeric'"/>
+              <field name="numeric_default" invisible="attribute_type != 'numeric'"/>
+              <field name="bool_surcharge"  invisible="attribute_type != 'boolean'"/>
+              <field name="bool_default"    invisible="attribute_type != 'boolean'"/>
+            </group>
+          </group>
+          <separator string="Values" invisible="attribute_type != 'list'"/>
+          <field name="value_ids" invisible="attribute_type != 'list'"/>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- ══ Form cpq.product ══════════════════════════════════════════════════ -->
+  <record id="view_cpq_product_form" model="ir.ui.view">
+    <field name="name">cpq.product.form</field>
+    <field name="model">cpq.product</field>
+    <field name="arch" type="xml">
+      <form string="Configurable CPQ Product">
+        <sheet>
+          <div class="oe_title">
+            <label for="name"/>
+            <h1><field name="name" placeholder="Configurable product name"/></h1>
+          </div>
+          <group>
+            <group>
+              <field name="product_tmpl_id" options="{'no_create': True}"/>
+            </group>
+            <group>
+              <field name="active" widget="boolean_toggle"/>
+            </group>
+          </group>
+
+          <notebook>
+
+            <!-- ── Pricing ────────────────────────────────────────────── -->
+            <page string="Pricing" name="pricing">
+              <group string="Pricing Mode" col="1">
+                <field name="price_mode" widget="radio" nolabel="1"/>
+              </group>
+
+              <group string="Calculation Parameters"
+                     invisible="price_mode == 'fixed'">
+                <group>
+                  <field name="width_attribute_id"
+                         invisible="price_mode == 'fixed'"
+                         options="{'no_create': True}"
+                         string="Width Attribute"/>
+                  <field name="height_attribute_id"
+                         invisible="price_mode != 'per_m2'"
+                         options="{'no_create': True}"
+                         string="Height Attribute"/>
+                </group>
+                <group>
+                  <field name="material_attribute_id"
+                         invisible="price_mode != 'per_m2'"
+                         options="{'no_create': True}"
+                         string="Material Attribute (rate/m²)"
+                         help="Each value can carry a per-m² rate."/>
+                  <field name="material_attribute_id"
+                         invisible="price_mode != 'per_lm'"
+                         options="{'no_create': True}"
+                         string="Material Attribute (rate/m)"
+                         help="Each value can carry a per-meter rate."/>
+                  <field name="price_per_m2"
+                         invisible="price_mode != 'per_m2'"
+                         string="Base Rate (/m²)"
+                         help="Used if no material attribute is designated."/>
+                  <field name="price_per_lm"
+                         invisible="price_mode != 'per_lm'"
+                         string="Base Rate (/m)"
+                         help="Used if no material attribute is designated."/>
+                </group>
+              </group>
+
+              <field name="pricing_warning" invisible="not pricing_warning"
+                     readonly="1" nolabel="1"
+                     style="color: #dc3545; font-weight: 600; font-size: 13px;"/>
+              <div class="alert alert-info mt-2" role="alert" style="font-size:13px;"
+                   invisible="price_mode != 'per_m2'">
+                <strong>How it works:</strong>
+                Create your attributes in the "Attributes" tab,
+                then designate here which one represents the width, height
+                and (optionally) the material with its per-m² rate.
+                Names are free.
+              </div>
+            </page>
+
+            <!-- ── Attributes ────────────────────────────────────────────────── -->
+            <page string="Attributes" name="attributes">
+              <field name="attribute_ids">
+                <list editable="bottom" string="Attributes"
+                      open_form_button_label="Edit values">
+                  <field name="sequence" widget="handle"/>
+                  <field name="name" string="Parameter"/>
+                  <field name="attribute_type" string="Type"/>
+                  <field name="numeric_default" invisible="attribute_type != 'numeric'" string="Default"/>
+                  <field name="numeric_min"     invisible="attribute_type != 'numeric'" string="Min"/>
+                  <field name="numeric_max"     invisible="attribute_type != 'numeric'" string="Max"/>
+                  <field name="numeric_unit"    invisible="attribute_type != 'numeric'" string="Unit"/>
+                </list>
+              </field>
+            </page>
+
+            <!-- ── Rates &amp; Values ─────────────────────────────────────────── -->
+            <page string="Rates &amp; Values" name="values">
+              <p class="text-muted mb-2" style="font-size:13px;">
+                <strong>Surcharge</strong>: amount added if this option is selected.
+                <strong>Rate per m²</strong>: visible only if this attribute
+                is designated as "Material Attribute" in the Pricing tab.
+              </p>
+              <field name="all_value_ids" nolabel="1" context="{'default_cpq_product_id': id}">
+                <list editable="bottom" default_order="attribute_name, sequence">
+                  <field name="attribute_id" string="Attribute" options="{'no_create': True}" domain="[('cpq_product_id', '=', parent.id), ('attribute_type', '=', 'list')]"/>
+                  <field name="sequence" widget="handle"/>
+                  <field name="name" string="Value"/>
+                  <field name="display_price" string="Price"/>
+                  <field name="price_unit" readonly="1" string="Unit"/>
+                  <field name="is_default" string="Default"/>
+                </list>
+              </field>
+              <separator string="Yes / No Options"/>
+              <field name="boolean_attribute_ids" nolabel="1">
+                <list editable="bottom">
+                  <field name="name" readonly="1" string="Parameter"/>
+                  <field name="bool_surcharge" string="Surcharge if Yes"/>
+                </list>
+              </field>
+            </page>
+
+            <!-- ── Paid add-ons ──────────────────────────────────────────────── -->
+            <page string="Paid Add-ons" name="addons_upsell">
+              <div class="alert alert-info" role="alert" style="font-size:13px;">
+                <strong>Add-on modules available on the Odoo App Store:</strong>
+                <ul class="mt-2 mb-0">
+                  <li><strong>CPQ Window &amp; Door — Conditional Logic</strong> —
+                    Hide or block options based on previous choices.</li>
+                  <li><strong>CPQ Window &amp; Door — Advanced Formulas</strong> —
+                    Tiered coefficients, supplier Excel price grid.</li>
+                  <li><strong>CPQ Window &amp; Door — Manufacturing BOM</strong> —
+                    Automatic generation of the manufacturing order.</li>
+                </ul>
+              </div>
+            </page>
+
+            <!-- ── Notes ────────────────────────────────────────────────────── -->
+            <page string="Notes" name="notes">
+              <field name="notes" placeholder="Internal notes..."/>
+            </page>
+
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- ══ List cpq.product ══════════════════════════════════════════════════ -->
+  <record id="view_cpq_product_list" model="ir.ui.view">
+    <field name="name">cpq.product.list</field>
+    <field name="model">cpq.product</field>
+    <field name="arch" type="xml">
+      <list string="Configurable CPQ Products">
+        <field name="name"/>
+        <field name="product_tmpl_id"/>
+        <field name="price_mode" string="Pricing Mode"/>
+        <field name="active"/>
+      </list>
+    </field>
+  </record>
+
+  <!-- ══ Action cpq.product ════════════════════════════════════════════════ -->
+  <record id="action_cpq_product" model="ir.actions.act_window">
+    <field name="name">Configurable Products</field>
+    <field name="res_model">cpq.product</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">
+        Create your first configurable CPQ product
+      </p>
+    </field>
+  </record>
+
+</odoo>

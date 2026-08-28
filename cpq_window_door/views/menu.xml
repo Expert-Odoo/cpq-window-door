@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <menuitem id="menu_cpq_root"
+            name="Window &amp; Door Configurator"
+            sequence="50"
+            web_icon="cpq_window_door,static/description/icon.png"/>
+
+  <menuitem id="menu_cpq_products"
+            name="Configurable Products"
+            parent="menu_cpq_root"
+            action="action_cpq_product"
+            sequence="10"/>
+
+  <menuitem id="menu_cpq_configurations"
+            name="Configurations"
+            parent="menu_cpq_root"
+            action="action_cpq_configuration"
+            sequence="20"/>
+
+</odoo>

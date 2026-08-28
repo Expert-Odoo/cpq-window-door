@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_cpq_configuration_list" model="ir.ui.view">
+    <field name="name">cpq.configuration.list</field>
+    <field name="model">cpq.configuration</field>
+    <field name="arch" type="xml">
+      <list string="CPQ Configurations" create="false">
+        <field name="sale_line_id"/>
+        <field name="cpq_product_id"/>
+        <field name="summary"/>
+        <field name="surface_m2"/>
+        <field name="price_unit"/>
+      </list>
+    </field>
+  </record>
+
+  <record id="action_cpq_configuration" model="ir.actions.act_window">
+    <field name="name">CPQ Configurations</field>
+    <field name="res_model">cpq.configuration</field>
+    <field name="view_mode">list</field>
+  </record>
+
+</odoo>
