@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cpq_product_user,cpq.product user,model_cpq_product,base.group_user,1,1,1,1
+access_cpq_attribute_user,cpq.attribute user,model_cpq_attribute,base.group_user,1,1,1,1
+access_cpq_attribute_value_user,cpq.attribute.value user,model_cpq_attribute_value,base.group_user,1,1,1,1
+access_cpq_configuration_user,cpq.configuration user,model_cpq_configuration,base.group_user,1,1,1,1
+access_cpq_configuration_value_user,cpq.configuration.value user,model_cpq_configuration_value,base.group_user,1,1,1,1
+access_cpq_configurator_wizard_user,cpq.configurator.wizard user,model_cpq_configurator_wizard,base.group_user,1,1,1,1
+access_cpq_configurator_wizard_line_user,cpq.configurator.wizard.line user,model_cpq_configurator_wizard_line,base.group_user,1,1,1,1
+access_cpq_line_selector_user,cpq.line.selector user,model_cpq_line_selector,base.group_user,1,1,1,1

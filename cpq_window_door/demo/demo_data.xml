@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+  <!-- ══ Base Odoo product ══════════════════════════════════════════════ -->
+  <record id="product_tmpl_fenetre_alu" model="product.template">
+    <field name="name">Aluminium Tilt &amp; Turn Window</field>
+    <field name="type">consu</field>
+    <field name="sale_ok">True</field>
+    <field name="purchase_ok">False</field>
+    <field name="description_sale">Configurable aluminium window, priced per m² based on your dimensions and options.</field>
+  </record>
+
+  <!-- ══ CPQ product ═══════════════════════════════════════════════════════ -->
+  <record id="cpq_product_fenetre_alu" model="cpq.product">
+    <field name="name">Aluminium Tilt &amp; Turn Window</field>
+    <field name="product_tmpl_id" ref="product_tmpl_fenetre_alu"/>
+  </record>
+
+  <!-- ══ Attribute: Width ════════════════════════════════════════════════ -->
+  <record id="attr_largeur" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_fenetre_alu"/>
+    <field name="name">Width</field>
+    <field name="attribute_type">numeric</field>
+    <field name="sequence">10</field>
+    
+    <field name="numeric_min">40</field>
+    <field name="numeric_max">300</field>
+    <field name="numeric_unit">cm</field>
+    <field name="numeric_default">120</field>
+  </record>
+
+  <!-- ══ Attribute: Height ════════════════════════════════════════════════ -->
+  <record id="attr_hauteur" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_fenetre_alu"/>
+    <field name="name">Height</field>
+    <field name="attribute_type">numeric</field>
+    <field name="sequence">20</field>
+    
+    <field name="numeric_min">40</field>
+    <field name="numeric_max">280</field>
+    <field name="numeric_unit">cm</field>
+    <field name="numeric_default">90</field>
+  </record>
+
+  <!-- ══ Attribute: Material (carries the m² rate) ══════════════════════════ -->
+  <record id="attr_materiau" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_fenetre_alu"/>
+    <field name="name">Material</field>
+    <field name="attribute_type">list</field>
+    <field name="sequence">30</field>
+    
+  </record>
+
+  <record id="val_mat_pvc" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_materiau"/>
+    <field name="name">PVC</field>
+    <field name="sequence">10</field>
+    <field name="price_per_m2">180</field>
+    <field name="is_default">False</field>
+  </record>
+  <record id="val_mat_alu" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_materiau"/>
+    <field name="name">Aluminium</field>
+    <field name="sequence">20</field>
+    <field name="price_per_m2">320</field>
+    <field name="is_default">True</field>
+  </record>
+  <record id="val_mat_bois" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_materiau"/>
+    <field name="name">Wood</field>
+    <field name="sequence">30</field>
+    <field name="price_per_m2">260</field>
+  </record>
+
+  <!-- ══ Attribute: Opening type ══════════════════════════════════════ -->
+  <record id="attr_ouverture" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_fenetre_alu"/>
+    <field name="name">Opening Type</field>
+    <field name="attribute_type">list</field>
+    <field name="sequence">40</field>
+  </record>
+  <record id="val_ouv_oscillo" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_ouverture"/>
+    <field name="name">Tilt &amp; Turn</field>
+    <field name="sequence">10</field>
+    <field name="surcharge">0</field>
+    <field name="is_default">True</field>
+  </record>
+  <record id="val_ouv_coulissant" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_ouverture"/>
+    <field name="name">Sliding</field>
+    <field name="sequence">20</field>
+    <field name="surcharge">0</field>
+  </record>
+  <record id="val_ouv_fixe" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_ouverture"/>
+    <field name="name">Fixed</field>
+    <field name="sequence">30</field>
+    <field name="surcharge">-30</field>
+  </record>
+
+  <!-- ══ Attribute: Glazing ════════════════════════════════════════════════ -->
+  <record id="attr_vitrage" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_fenetre_alu"/>
+    <field name="name">Glazing</field>
+    <field name="attribute_type">list</field>
+    <field name="sequence">50</field>
+  </record>
+  <record id="val_vit_simple" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_vitrage"/>
+    <field name="name">Single</field>
+    <field name="sequence">10</field>
+    <field name="surcharge">0</field>
+    <field name="is_default">True</field>
+  </record>
+  <record id="val_vit_double_argon" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_vitrage"/>
+    <field name="name">Double Glazed Argon</field>
+    <field name="sequence">20</field>
+    <field name="surcharge">80</field>
+  </record>
+  <record id="val_vit_double_4164" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_vitrage"/>
+    <field name="name">Double Glazed 4-16-4</field>
+    <field name="sequence">30</field>
+    <field name="surcharge">65</field>
+  </record>
+  <record id="val_vit_triple" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_vitrage"/>
+    <field name="name">Triple</field>
+    <field name="sequence">40</field>
+    <field name="surcharge">150</field>
+  </record>
+
+  <!-- ══ Attribute: Exterior color ═════════════════════════════════════ -->
+  <record id="attr_couleur_ext" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_fenetre_alu"/>
+    <field name="name">Exterior Color</field>
+    <field name="attribute_type">list</field>
+    <field name="sequence">60</field>
+  </record>
+  <record id="val_col_blanc" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_couleur_ext"/>
+    <field name="name">White</field>
+    <field name="sequence">10</field>
+    <field name="surcharge">0</field>
+    <field name="is_default">True</field>
+  </record>
+  <record id="val_col_anthracite" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_couleur_ext"/>
+    <field name="name">Anthracite Grey RAL 7016</field>
+    <field name="sequence">20</field>
+    <field name="surcharge">40</field>
+  </record>
+  <record id="val_col_ral_std" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_couleur_ext"/>
+    <field name="name">Standard RAL</field>
+    <field name="sequence">30</field>
+    <field name="surcharge">40</field>
+  </record>
+  <record id="val_col_ral_spe" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_couleur_ext"/>
+    <field name="name">Custom RAL</field>
+    <field name="sequence">40</field>
+    <field name="surcharge">90</field>
+  </record>
+
+  <!-- ══ Attribute: Handle ════════════════════════════════════════════════ -->
+  <record id="attr_poignee" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_fenetre_alu"/>
+    <field name="name">Handle</field>
+    <field name="attribute_type">list</field>
+    <field name="sequence">70</field>
+  </record>
+  <record id="val_poi_standard" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_poignee"/>
+    <field name="name">Standard</field>
+    <field name="sequence">10</field>
+    <field name="surcharge">0</field>
+    <field name="is_default">True</field>
+  </record>
+  <record id="val_poi_chromee" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_poignee"/>
+    <field name="name">Chrome</field>
+    <field name="sequence">20</field>
+    <field name="surcharge">25</field>
+  </record>
+  <record id="val_poi_doree" model="cpq.attribute.value">
+    <field name="attribute_id" ref="attr_poignee"/>
+    <field name="name">Gold</field>
+    <field name="sequence">30</field>
+    <field name="surcharge">35</field>
+  </record>
+
+  <!-- ══ Attribute: Installation included (boolean) ════════════════════════════════ -->
+  <record id="attr_pose" model="cpq.attribute">
+    <field name="cpq_product_id" ref="cpq_product_fenetre_alu"/>
+    <field name="name">Installation Included</field>
+    <field name="attribute_type">boolean</field>
+    <field name="sequence">80</field>
+    <field name="bool_surcharge">150</field>
+    <field name="bool_default">False</field>
+  </record>
+  <!-- ══ Pricing links (after attributes are created) ═══════════ -->
+  <record id="cpq_product_fenetre_alu" model="cpq.product">
+    <field name="price_mode">per_m2</field>
+    <field name="width_attribute_id" ref="attr_largeur"/>
+    <field name="height_attribute_id" ref="attr_hauteur"/>
+    <field name="material_attribute_id" ref="attr_materiau"/>
+  </record>
+
+</odoo>

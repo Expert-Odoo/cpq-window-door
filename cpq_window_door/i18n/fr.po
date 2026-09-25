@@ -1,0 +1,586 @@
+# Translation of cpq_window_door in French
+# This file is distributed under the same license as the cpq_window_door module.
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-03 12:33+0000\n"
+"PO-Revision-Date: 2026-06-03 12:33+0000\n"
+"Last-Translator: expodo.fr <info@expodo.fr>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: cpq_window_door
+#: model:ir.ui.menu,name:cpq_window_door.menu_cpq_root
+msgid "CPQ Window & Door"
+msgstr "CPQ Menuiserie"
+
+#. module: cpq_window_door
+#: model:ir.ui.menu,name:cpq_window_door.menu_cpq_products
+msgid "Configurable Products"
+msgstr "Produits configurables"
+
+#. module: cpq_window_door
+#: model:ir.ui.menu,name:cpq_window_door.menu_cpq_configurations
+msgid "Configurations"
+msgstr "Configurations"
+
+#. module: cpq_window_door
+#: model:ir.actions.act_window,name:cpq_window_door.action_cpq_product
+msgid "Configurable Products"
+msgstr "Produits configurables"
+
+#. module: cpq_window_door
+#: model:ir.actions.act_window,name:cpq_window_door.action_cpq_configuration
+msgid "CPQ Configurations"
+msgstr "Configurations CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model,model_description:cpq_window_door.model_cpq_product
+msgid "Configurable CPQ Product"
+msgstr "Produit configurable CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__product_tmpl_id
+msgid "Odoo Product"
+msgstr "Produit Odoo"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__notes
+msgid "Internal Notes"
+msgstr "Notes internes"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__price_mode
+msgid "Pricing Mode"
+msgstr "Mode de calcul"
+
+#. module: cpq_window_door
+#: model:ir.model.fields.selection,name:cpq_window_door.selection__cpq_product__price_mode__per_m2
+msgid "Price per m²  (W x H x rate)"
+msgstr "Prix au m²  (L x H x tarif)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields.selection,name:cpq_window_door.selection__cpq_product__price_mode__per_lm
+msgid "Price per linear meter  (W x rate)"
+msgstr "Prix au mètre linéaire  (L x tarif)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields.selection,name:cpq_window_door.selection__cpq_product__price_mode__fixed
+msgid "Fixed price  (surcharges only)"
+msgstr "Prix fixe  (surcoûts uniquement)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__width_attribute_id
+msgid "Width Attribute"
+msgstr "Attribut Largeur"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__height_attribute_id
+msgid "Height Attribute"
+msgstr "Attribut Hauteur"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__material_attribute_id
+msgid "Material Attribute"
+msgstr "Attribut Matériau"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__price_per_m2
+msgid "Base Rate (/m²)"
+msgstr "Tarif de base (/m²)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__price_per_lm
+msgid "Base Rate (/m)"
+msgstr "Tarif de base (/m)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__attribute_ids
+msgid "Attributes"
+msgstr "Attributs"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__all_value_ids
+msgid "All Values"
+msgstr "Toutes les valeurs"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_product__boolean_attribute_ids
+msgid "Yes/No Options"
+msgstr "Options Oui/Non"
+
+#. module: cpq_window_door
+#: model:ir.model,model_description:cpq_window_door.model_cpq_attribute
+msgid "CPQ Attribute"
+msgstr "Attribut CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__attribute_type
+msgid "Type"
+msgstr "Type"
+
+#. module: cpq_window_door
+#: model:ir.model.fields.selection,name:cpq_window_door.selection__cpq_attribute__attribute_type__list
+msgid "Selection list"
+msgstr "Liste de choix"
+
+#. module: cpq_window_door
+#: model:ir.model.fields.selection,name:cpq_window_door.selection__cpq_attribute__attribute_type__numeric
+msgid "Numeric"
+msgstr "Numérique"
+
+#. module: cpq_window_door
+#: model:ir.model.fields.selection,name:cpq_window_door.selection__cpq_attribute__attribute_type__boolean
+msgid "Yes / No"
+msgstr "Oui / Non"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__is_required
+msgid "Required"
+msgstr "Obligatoire"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__numeric_min
+msgid "Min"
+msgstr "Min"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__numeric_max
+msgid "Max"
+msgstr "Max"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__numeric_unit
+msgid "Unit"
+msgstr "Unité"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__numeric_default
+msgid "Default"
+msgstr "Défaut"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__value_ids
+msgid "Values"
+msgstr "Valeurs"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__bool_surcharge
+msgid "Surcharge if Yes"
+msgstr "Surcoût si Oui"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute__bool_default
+msgid "Default"
+msgstr "Défaut"
+
+#. module: cpq_window_door
+#: model:ir.model,model_description:cpq_window_door.model_cpq_attribute_value
+msgid "CPQ Attribute Value"
+msgstr "Valeur d'attribut CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute_value__name
+msgid "Value"
+msgstr "Valeur"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute_value__attribute_name
+msgid "Attribute"
+msgstr "Attribut"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute_value__surcharge
+msgid "Surcharge"
+msgstr "Surcoût"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute_value__price_per_m2
+msgid "Rate per m²"
+msgstr "Tarif au m²"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_attribute_value__is_default
+msgid "Default"
+msgstr "Par défaut"
+
+#. module: cpq_window_door
+#: model:ir.model,model_description:cpq_window_door.model_cpq_configuration
+msgid "Saved CPQ Configuration"
+msgstr "Configuration CPQ enregistrée"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configuration__sale_line_id
+msgid "Quotation Line"
+msgstr "Ligne de devis"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configuration__cpq_product_id
+msgid "CPQ Product"
+msgstr "Produit CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configuration__price_unit
+msgid "Unit Price (excl. tax)"
+msgstr "Prix unitaire HT"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configuration__surface_m2
+msgid "Area (m²)"
+msgstr "Surface (m²)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configuration__summary
+msgid "Summary"
+msgstr "Récapitulatif"
+
+#. module: cpq_window_door
+#: model:ir.model,model_description:cpq_window_door.model_cpq_configuration_value
+msgid "CPQ Configuration Value"
+msgstr "Valeur de configuration CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configuration_value__value_list_id
+msgid "Value (list)"
+msgstr "Valeur (liste)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configuration_value__value_numeric
+msgid "Value (numeric)"
+msgstr "Valeur (numérique)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configuration_value__value_boolean
+msgid "Value (yes/no)"
+msgstr "Valeur (oui/non)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_sale_order_line__cpq_configuration_id
+msgid "CPQ Configuration"
+msgstr "Configuration CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_sale_order_line__cpq_summary
+msgid "CPQ Summary"
+msgstr "Récapitulatif CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_sale_order__cpq_line_count
+msgid "CPQ Lines"
+msgstr "Lignes CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_sale_order__cpq_unconfigured_count
+msgid "Unconfigured CPQ Lines"
+msgstr "Lignes CPQ non configurées"
+
+#. module: cpq_window_door
+#: model:ir.model,model_description:cpq_window_door.model_cpq_configurator_wizard
+msgid "CPQ Configurator"
+msgstr "Configurateur CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configurator_wizard__price_total
+msgid "Total Price (excl. tax)"
+msgstr "Prix total HT"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configurator_wizard__surface_m2
+msgid "Area (m²)"
+msgstr "Surface (m²)"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_configurator_wizard__price_breakdown
+msgid "Price breakdown"
+msgstr "Détail du prix"
+
+#. module: cpq_window_door
+#: model:ir.model,model_description:cpq_window_door.model_cpq_configurator_wizard_line
+msgid "CPQ Configurator Line"
+msgstr "Ligne du configurateur CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model,model_description:cpq_window_door.model_cpq_line_selector
+msgid "CPQ Line Selection"
+msgstr "Sélection ligne CPQ"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_line_selector__line_id
+msgid "Product to configure"
+msgstr "Produit à configurer"
+
+#. module: cpq_window_door
+#: model:ir.model.fields,field_description:cpq_window_door.field_cpq_line_selector__line_summary
+msgid "Current configuration"
+msgstr "Configuration actuelle"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_attribute_value_list
+msgid "Values"
+msgstr "Valeurs"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_attribute_value_list
+msgid "Surcharge (€)"
+msgstr "Surcoût (€)"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_attribute_value_list
+msgid "Rate per m² (if material)"
+msgstr "Tarif au m² (si matériau)"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_attribute_form
+msgid "CPQ Attribute"
+msgstr "Attribut CPQ"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_attribute_form
+msgid "Values"
+msgstr "Valeurs"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Configurable CPQ Product"
+msgstr "Produit configurable CPQ"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Configurable product name"
+msgstr "Nom du produit configurable"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Pricing Mode"
+msgstr "Mode de calcul"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Calculation Parameters"
+msgstr "Paramètres du calcul"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Width Attribute"
+msgstr "Attribut Largeur"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Height Attribute"
+msgstr "Attribut Hauteur"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Material Attribute (rate/m²)"
+msgstr "Attribut matériau (tarif/m²)"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Material Attribute (rate/m)"
+msgstr "Attribut matériau (tarif/m)"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Each value can carry a per-m² rate."
+msgstr "Chaque valeur peut porter un tarif au m²."
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Each value can carry a per-meter rate."
+msgstr "Chaque valeur peut porter un tarif au ml."
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Base Rate (/m²)"
+msgstr "Tarif de base (/m²)"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Base Rate (/m)"
+msgstr "Tarif de base (/m)"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Used if no material attribute is designated."
+msgstr "Utilisé si aucun attribut matériau n'est désigné."
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "How it works:"
+msgstr "Fonctionnement :"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Pricing"
+msgstr "Tarification"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Attributes"
+msgstr "Attributs"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Edit values"
+msgstr "Modifier les valeurs"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Parameter"
+msgstr "Paramètre"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Rates &amp; Values"
+msgstr "Tarifs &amp; Valeurs"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Surcharge"
+msgstr "Surcoût"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Yes / No Options"
+msgstr "Options Oui / Non"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Surcharge if Yes (€)"
+msgstr "Surcoût si Oui (€)"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Paid Add-ons"
+msgstr "Add-ons payants"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Add-on modules available on the Odoo App Store:"
+msgstr "Modules complémentaires disponibles sur l'Odoo App Store :"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Notes"
+msgstr "Notes"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_form
+msgid "Internal notes..."
+msgstr "Notes internes..."
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_list
+msgid "Configurable CPQ Products"
+msgstr "Produits configurables CPQ"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_product_list
+msgid "Pricing Mode"
+msgstr "Mode de calcul"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.action_cpq_product
+msgid "Create your first configurable CPQ product"
+msgstr "Créez votre premier produit configurable CPQ"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_configuration_list
+msgid "CPQ Configurations"
+msgstr "Configurations CPQ"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_configurator_wizard_form
+msgid "Configuration parameters"
+msgstr "Paramètres de configuration"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_configurator_wizard_form
+msgid "Parameter"
+msgstr "Paramètre"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_configurator_wizard_form
+msgid "Choice"
+msgstr "Choix"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_configurator_wizard_form
+msgid "Value"
+msgstr "Valeur"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_configurator_wizard_form
+msgid "Included"
+msgstr "Inclus"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_configurator_wizard_form
+msgid "Confirm configuration"
+msgstr "Valider la configuration"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_configurator_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_line_selector_form
+msgid "Product to configure"
+msgstr "Produit à configurer"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_line_selector_form
+msgid "Current configuration"
+msgstr "Configuration actuelle"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_line_selector_form
+msgid "Not configured"
+msgstr "Non configuré"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_line_selector_form
+msgid "⚙ Open configurator"
+msgstr "⚙ Ouvrir le configurateur"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_cpq_line_selector_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_sale_order_form_cpq
+msgid "CPQ Product(s)"
+msgstr "Produit(s) CPQ"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_sale_order_form_cpq
+msgid "to configure"
+msgstr "à configurer"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_sale_order_form_cpq
+msgid "⚙ Configure product"
+msgstr "⚙ Configurer le produit"
+
+#. module: cpq_window_door
+#: model_terms:ir.ui.view,arch_db:cpq_window_door.view_sale_order_form_cpq
+msgid "Not configured — click Configure"
+msgstr "Non configuré — cliquer sur Configurer"
+
