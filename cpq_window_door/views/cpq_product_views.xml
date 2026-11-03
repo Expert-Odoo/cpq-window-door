@@ -6,13 +6,13 @@
     <field name="name">cpq.attribute.value.list</field>
     <field name="model">cpq.attribute.value</field>
     <field name="arch" type="xml">
-      <list editable="bottom" string="Values">
+      <tree editable="bottom" string="Values">
         <field name="sequence" widget="handle"/>
         <field name="name"/>
         <field name="surcharge" string="Surcharge"/>
         <field name="price_per_m2" string="Rate per m² (if material)"/>
         <field name="is_default"/>
-      </list>
+      </tree>
     </field>
   </record>
 
@@ -124,7 +124,7 @@
             <!-- ── Attributes ────────────────────────────────────────────────── -->
             <page string="Attributes" name="attributes">
               <field name="attribute_ids">
-                <list editable="bottom" string="Attributes"
+                <tree editable="bottom" string="Attributes"
                       open_form_button_label="Edit values">
                   <field name="sequence" widget="handle"/>
                   <field name="name" string="Parameter"/>
@@ -133,7 +133,7 @@
                   <field name="numeric_min"     invisible="attribute_type != 'numeric'" string="Min"/>
                   <field name="numeric_max"     invisible="attribute_type != 'numeric'" string="Max"/>
                   <field name="numeric_unit"    invisible="attribute_type != 'numeric'" string="Unit"/>
-                </list>
+                </tree>
               </field>
             </page>
 
@@ -145,21 +145,21 @@
                 is designated as "Material Attribute" in the Pricing tab.
               </p>
               <field name="all_value_ids" nolabel="1" context="{'default_cpq_product_id': id}">
-                <list editable="bottom" default_order="attribute_name, sequence">
+                <tree editable="bottom" default_order="attribute_name, sequence">
                   <field name="attribute_id" string="Attribute" options="{'no_create': True}" domain="[('cpq_product_id', '=', parent.id), ('attribute_type', '=', 'list')]"/>
                   <field name="sequence" widget="handle"/>
                   <field name="name" string="Value"/>
                   <field name="display_price" string="Price"/>
                   <field name="price_unit" readonly="1" string="Unit"/>
                   <field name="is_default" string="Default"/>
-                </list>
+                </tree>
               </field>
               <separator string="Yes / No Options"/>
               <field name="boolean_attribute_ids" nolabel="1">
-                <list editable="bottom">
+                <tree editable="bottom">
                   <field name="name" readonly="1" string="Parameter"/>
                   <field name="bool_surcharge" string="Surcharge if Yes"/>
-                </list>
+                </tree>
               </field>
             </page>
 
@@ -194,12 +194,12 @@
     <field name="name">cpq.product.list</field>
     <field name="model">cpq.product</field>
     <field name="arch" type="xml">
-      <list string="Configurable CPQ Products">
+      <tree string="Configurable CPQ Products">
         <field name="name"/>
         <field name="product_tmpl_id"/>
         <field name="price_mode" string="Pricing Mode"/>
         <field name="active"/>
-      </list>
+      </tree>
     </field>
   </record>
 
@@ -207,7 +207,7 @@
   <record id="action_cpq_product" model="ir.actions.act_window">
     <field name="name">Configurable Products</field>
     <field name="res_model">cpq.product</field>
-    <field name="view_mode">list,form</field>
+    <field name="view_mode">tree,form</field>
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">
         Create your first configurable CPQ product
