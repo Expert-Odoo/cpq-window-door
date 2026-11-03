@@ -1,6 +1,6 @@
 {
     'name': 'Window & Door Product Configurator — m² Quotation',
-    'version': '19.0.1.2.1',
+    'version': '20.0.1.0.0',
     'category': 'Sales/Sales',
     'summary': 'For window and door manufacturers: enter dimensions, pick options, get the price instantly in Odoo Sales.',
     'description': 'static/description/index.html',
@@ -10,7 +10,7 @@
     'license': 'LGPL-3',
     'depends': ['sale_management'],
     'data': [
-        'security/ir.model.access.csv',
+        'security/ir.access.csv',
         'views/cpq_product_views.xml',
         'views/cpq_configuration_views.xml',
         'views/cpq_configurator_views.xml',
