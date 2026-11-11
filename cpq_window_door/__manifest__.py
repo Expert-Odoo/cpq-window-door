@@ -1,8 +1,8 @@
 {
-    'name': 'Window & Door Product Configurator — m² Quotation',
-    'version': '17.0.1.0.0',
+    'name': 'Window Configurator, Door Configurator, Made to Measure Windows and Doors, Aluminium Joinery Price Quote by Dimensions',
+    'version': '17.0.1.0.1',
     'category': 'Sales/Sales',
-    'summary': 'For window and door manufacturers: enter dimensions, pick options, get the price instantly in Odoo Sales.',
+    'summary': 'For window and door manufacturers and aluminium joinery: enter width and height, choose glazing, profile and hardware options, get the made to measure price instantly on the sale order. Window and door configurator with square meter m2 pricing and conditional options.',
     'description': 'static/description/index.html',
     'author': 'expodo.fr',
     'website': 'https://expodo.fr',
